@@ -28,7 +28,18 @@ function createNumbers(Number){
     return numbers;
 }
 
-
+let second = 30;
 let number = 5;
 let numbers = createNumbers(number);
-console.log(numbers);
+
+let clock = setInterval(function(){
+    console.log(numbers);
+    document.getElementById("numeri").innerText = numbers;
+    if(second == 0){
+        clearInterval(clock);
+        document.getElementById("numeri").innerText = "";
+    } 
+    else{
+        second--;
+    }
+}, 1000);
