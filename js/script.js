@@ -31,9 +31,9 @@ function createNumbers(Number){
 let second = 30;
 let number = 5;
 let numbers = createNumbers(number);
+console.log(numbers);
 
 let clock = setInterval(function(){
-    console.log(numbers);
     document.getElementById("numeri").innerText = numbers;
     if(second == 0){
         clearInterval(clock);
@@ -42,4 +42,21 @@ let clock = setInterval(function(){
     else{
         second--;
     }
-}, 1000);
+},1000);
+
+setTimeout(function(){
+    function userPrompt(Number){
+        let userNumbers = [];
+    
+        for(let i=1; i<=Number; i++){
+            let numberUser = prompt(`inserisci il tuo ${i}° numero`);
+            userNumbers.push(numberUser);
+            document.getElementById("user").innerText = userNumbers;
+        }
+        console.log(userNumbers);
+    }
+    let userNumbers = userPrompt(number);
+    console.log(userNumbers);
+    
+}, 35000);
+
